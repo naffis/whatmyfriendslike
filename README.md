@@ -1,2 +1,4 @@
 whatmyfriendslike
 =================
+
+This is one of my very first Rails apps built around 2006. Think of it as a recommendation engine before there were recommendation engines. Once you signed up it would fetch your list of friends from MySpace, look at what movies, music, and books they listed as their favorites and then create a list ranked in order of popularity. Since MySpace at this point didn't allow iframes or many html tags it was necessary to create a static image that would be embedded on your myspace page instead. This image would be automatically and frequently updated based on new additions to your friends list and new additions to their favorites. Here's an old blog post announcing the app. http://naffis.com/whatmyfriendslikecom.

@@ -1,0 +1,23 @@
+<p align="center">
+Most popular items for <a href="http://profile.myspace.com/index.cfm?fuseaction=user.viewprofile&friendid=<%= @user.myspace_id -%>"><%= @user.username %></a>
+</p>
+
+		<p align="center">
+			<%= render(:partial => "item_list_personal", 
+					:object => @musics,
+					:locals => { :type => "Music",
+						:user_id => @user.id }) %>
+		</p>		
+		<p align="center">
+			<%= render(:partial => "item_list_personal", 
+					:object => @movies,
+					:locals => { :type => "Movies",
+						:user_id => @user.id }) %>
+		</p>		
+		<p align="center">
+			<%= render(:partial => "item_list_personal", 
+					:object => @books,
+					:locals => { :type => "Books",
+						:user_id => @user.id }) %>
+		</p>				
+

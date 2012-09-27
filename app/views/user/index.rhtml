@@ -1,0 +1,36 @@
+<p>
+WhatMyFriendsLike.com lets you create a ranked list of all the music, 
+movies, and books your friends like. 
+</p>
+
+<p>
+Create an account today and find out what the most popular 
+music, movies, and books are among all your friends.
+</p>
+
+<p align="center">
+	<%= link_to(
+		"Create your account", 
+		{ :controller=>"user", :action => "new" }
+	)%>
+</p>
+
+<p align="center">
+	Already have an account?
+	<%= link_to(
+		"Get your code.", 
+		{ :controller=>"user", :action => "find_code" }
+	)%>
+</p>
+
+<p align="center">
+As an example here are the most popular items for <a href="http://profile.myspace.com/index.cfm?fuseaction=user.viewprofile&friendid=<%= @user.myspace_id -%>"><%= @user.username %></a>
+</p>
+
+<p align="center">
+	<%= render(:partial => "item_list_personal", 
+			:object => @musics,
+			:locals => { :type => "Music",
+				:user_id => @user.id }) %>
+</p>		
+

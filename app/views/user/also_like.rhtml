@@ -1,0 +1,26 @@
+<p>
+	<% if(@user_id) %>
+		<%= link_to("Back to most popular items", :action => "items", :id => @user_id) %>
+	<% end %>
+</p>
+		<p align="center">
+			<%= render(:partial => "who_friends_items", 
+					:object => @musics,
+					:locals => { :username => @username, 
+						:myspace_id => @myspace_id,
+						:type => "Music" }) %>
+		</p>	
+		<p align="center">
+			<%= render(:partial => "who_friends_items", 
+					:object => @movies,
+					:locals => { :username => @username, 
+						:myspace_id => @myspace_id,
+						:type => "Movies" }) %>
+		</p>	
+		<p align="center">
+			<%= render(:partial => "who_friends_items", 
+					:object => @books,
+					:locals => { :username => @username, 
+						:myspace_id => @myspace_id,
+						:type => "Books" }) %>
+		</p>					

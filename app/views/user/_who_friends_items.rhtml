@@ -1,0 +1,26 @@
+		<table class="listtable" width="350">
+			<tr class="listtitle">
+				<td colspan="2">
+					&nbsp;<%= type %><a href="http://profile.myspace.com/index.cfm?fuseaction=user.viewprofile&friendid=<%= myspace_id -%>"><%= username[0...20] -%><% if(username.length > 20) -%>...<% end -%></a> Likes
+				</td>
+			</tr>
+			<tr class="listheader">
+				<td>Name</td>
+			</tr>	
+		<% for item in who_friends_items %>	
+			<tr class="listbody">
+				<td class="listbody">			
+					<% if(type == "Music") %>
+						<a href="http://www.amazon.com/gp/redirect.html?link_code=ur2&tag=outbrandingco-20&camp=1789&creative=9325&location=/gp/search%3F%26index=music%26keywords=<%= h(item.name) -%>%26_encoding=UTF8">
+					<% elsif(type == "Movies") %>
+						<a href="http://www.amazon.com/gp/redirect.html?link_code=ur2&tag=outbrandingco-20&camp=1789&creative=9325&location=/gp/search%3F%26index=dvd%26keywords=<%= h(item.name) -%>%26_encoding=UTF8">				
+					<% elsif(type == "Books") %>
+						<a href="http://www.amazon.com/gp/redirect.html?link_code=ur2&tag=outbrandingco-20&camp=1789&creative=9325&location=/gp/search%3F%26index=books%26keywords=<%= h(item.name) -%>%26_encoding=UTF8">
+					<% end %>									
+						<%= h(item.name[0...50]) -%>
+						<% if(item.name.length > 50) -%>...<% end -%>					
+					</a>
+				</td>
+			</tr>		
+		<% end %> 
+		</table>

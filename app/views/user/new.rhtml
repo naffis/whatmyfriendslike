@@ -1,0 +1,18 @@
+<p>
+	Enter the email address used to register for MySpace.com below and click Create.
+</p>
+<p>
+	WhatMyFriendsLike.com will not work if your profile is set to private.
+</p>
+
+<p>
+<%= form_tag(:action => 'create') %>
+&nbsp;<%= text_field "user", "email", "size" => 45 %>
+<%= submit_tag(
+	"Create Account", 
+	{:onclick => "this.disabled=true;Element.show('spinner');Element.show('waiting');"}
+) %>
+<%= image_tag "spinner.gif", :id => 'spinner', :style => 'display:none;' %>
+<%= end_form_tag %>
+</p>
+<div id="waiting" style="display:none;">&nbsp;Please wait. This could take a few minutes.</div>

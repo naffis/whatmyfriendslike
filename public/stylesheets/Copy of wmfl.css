@@ -1,0 +1,87 @@
+
+html {
+  padding:0px;
+  margin:0px;
+}
+
+body {
+  	background-color: #e1ddd9;
+  	font-size: 12px;
+  	font-family: Verdana, Arial, SunSans-Regular, Sans-Serif;
+  	color:#564b47;
+  	padding:0px;
+  	margin:0px;
+}
+
+#header {
+/*	float: left; */
+	width: 100%;	
+	margin: 0px;
+	padding: 5px 20px 5px 20px;
+	text-align: center;	
+}
+
+#header a {
+	color: #ff66cc;
+	font-size: 18px;
+	background-color:transparent;
+	text-decoration: none;
+}
+
+
+
+#navbar {
+	float: left;
+	width: 100%;	
+	font-size: 11px;
+	text-transform:uppercase;
+	text-align: center;
+	color: #564b47;
+	background-color: #90897a;
+	padding:5px 15px; 
+	margin:0px
+}
+
+
+#footer {
+	float: left;
+	width: 100%;
+	font-size: 11px;
+	text-transform:uppercase;
+	text-align: center;
+	color: #564b47;
+	background-color: #90897a;
+	padding:5px 15px;
+	margin:0px
+}
+
+#mainpanel {
+	float: left;
+	width:450px;
+	/*margin: 0px 190px 0px 190px;*/
+	border-left: 2px solid #564b47;
+	border-right: 2px solid #564b47;
+	padding: 0px;
+	/*padding: 2px;*/
+	background-color: #ffffff;
+} 	
+
+#leftpanel {
+	float: left;
+	width: 200px;
+	color: #564b47;
+	padding: 0px;
+}
+
+#rightpanel {
+	float: right;
+	width: 150px;	
+	color: #564b47;
+	padding: 0px;
+}
+
+#adbox {
+	padding-top: 5px;
+	padding-left: 5px;
+}
+

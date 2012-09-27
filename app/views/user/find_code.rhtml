@@ -1,0 +1,15 @@
+<p>
+	Enter the email address used to register for MySpace.com below and click Get Code.
+</p>
+
+<p>
+<%= form_tag(:action => 'code') %>
+&nbsp;<%= text_field "user", "email", "size" => 45 %>
+<%= submit_tag(
+	"Get Code", 
+	{:onclick => "this.disabled=true;Element.show('spinner');Element.show('waiting');"}
+) %>
+<%= image_tag "spinner.gif", :id => 'spinner', :style => 'display:none;' %>
+<%= end_form_tag %>
+</p>
+<div id="waiting" style="display:none;">&nbsp;Please wait. This could take a few minutes.</div>

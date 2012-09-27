@@ -1,0 +1,75 @@
+<html>
+	<head>
+		<title>
+			WhatMyFriendsLike.com
+		</title>		
+		
+		<%= javascript_include_tag :defaults %>
+		<%= stylesheet_link_tag 'wmfl' %>
+		<!--[if IE]>
+			<link href="/app/stylesheets/3col-ie.css" rel="stylesheet" type="text/css" />
+		<![endif]-->		
+	</head>
+
+<body>
+	<div id="minHeight"></div>
+	<div id="outer">
+		<div id="clearheader"></div>
+		<div id="clearnavbar"></div>
+
+	<div id="left">
+		<p align="center">
+			<a href="http://www.naffis.com/msmaps/">Get A MySpace Map</a>		
+			<br><br>
+			<%= render(:partial => "item_list_main", 
+					:object => @musics_main,
+					:locals => { :type => "Music" }) %>
+		</p>
+		<p align="center">
+			<%= render(:partial => "item_list_main", 
+					:object => @movies_main,
+					:locals => { :type => "Movies" }) %>
+		</p>
+		<p align="center">
+			<%= render(:partial => "item_list_main", 
+					:object => @books_main,
+					:locals => { :type => "Books" }) %>
+		</p>
+	</div>
+	<div id="centrecontent">
+		<%= yield %>
+	</div>
+	<div id="right">
+		<div id="adbox">
+			<!-- Begin: AdBrite -->
+			<style type="text/css">
+				.adHeadline {font: bold 10pt Arial; text-decoration: underline; color: blue;}
+				.adText {font: normal 10pt Arial; text-decoration: none; color: black;}
+			</style>
+			<script type="text/javascript" src="http://4.adbrite.com/mb/text_group.php?sid=119026&amp;br=1&amp;dk=7469636b6574735f355f32"></script>
+			<div><a class="adHeadline" target="_top" href="http://www.adbrite.com/mb/commerce/purchase_form.php?opid=119026&amp;afsid=1">Your Ad Here</a></div>
+			<!-- End: AdBrite -->
+	  	</div>
+	</div>
+	<div id="clearfooter"></div>
+	<!-- to clear footer -->
+</div>
+<!-- end outer div -->
+		
+	<div id="footer">
+		<a href="http://www.WhatMyFriendsLike.com">WhatMyFriendsLike.com<a> &copy; 2006&nbsp;
+		-&nbsp;<a href="mailto:admin@WhatMyFriendsLike.com?subject=WMFL Comment">Problems or Comments?</a>
+		-&nbsp;<a href="http://www.naffis.com/blog/articles/2006/07/06/whatmyfriendslike-com">News/Discuss</a>
+	</div>	
+	<div id="header">
+		<a href="http://www.whatmyfriendslike.com/">WhatMyFriendsLike.com</a>
+	</div>
+	<div id="navbar">
+		<%= link_to("Home", :controller => "user", :action => "index") %>
+		| 
+		<%= link_to("Create Account", :controller => "user", :action => "new") %>		
+		| 
+		<%= link_to("Get Your Code", :controller => "user", :action => "find_code") %>		
+	</div>	
+</body>
+</html>

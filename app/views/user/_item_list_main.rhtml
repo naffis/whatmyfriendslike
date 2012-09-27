@@ -1,0 +1,36 @@
+		<table class="listtable" width="175">
+			<tr class="listtitle">
+				<td colspan="3">
+					&nbsp;<b>Most Popular <%= type %></b>
+				</td>
+			</tr>
+			<tr class="listheader">
+				<td>#</td>
+				<td>Name</td>
+				<td>People</td>
+			</tr>	
+		<% count = 1 %>
+		<% for item in item_list_main %>	
+			<tr class="listbody">
+				<td class="listbody">
+					<%= count %>
+				</td>
+				<td class="listbody">			
+					<% if(type == "Music") %>
+						<a href="http://www.amazon.com/gp/redirect.html?link_code=ur2&tag=outbrandingco-20&camp=1789&creative=9325&location=/gp/search%3F%26index=music%26keywords=<%= h(item.item_name) -%>%26_encoding=UTF8">
+					<% elsif(type == "Movies") %>
+						<a href="http://www.amazon.com/gp/redirect.html?link_code=ur2&tag=outbrandingco-20&camp=1789&creative=9325&location=/gp/search%3F%26index=dvd%26keywords=<%= h(item.item_name) -%>%26_encoding=UTF8">				
+					<% elsif(type == "Books") %>
+						<a href="http://www.amazon.com/gp/redirect.html?link_code=ur2&tag=outbrandingco-20&camp=1789&creative=9325&location=/gp/search%3F%26index=books%26keywords=<%= h(item.item_name) -%>%26_encoding=UTF8">
+					<% end %>
+						<%= h(item.item_name[0...13]) -%>
+						<% if(item.item_name.length > 13) -%>...<% end -%>
+					</a>		
+				</td>
+				<td class="listbody">
+					<%= item.item_count %>
+				</td>		
+			</tr>		
+		<% count+= 1 %>
+		<% end %> 
+		</table>

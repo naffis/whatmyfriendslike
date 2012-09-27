@@ -1,0 +1,47 @@
+		<table class="listtable" width="350">
+			<tr class="listtitle">
+				<td colspan="4">
+					&nbsp;<b>Most Popular <%= type %></b>
+				</td>
+			</tr>
+			<tr class="listheader">
+				<td>#</td>
+				<td>Name</td>
+				<td>People</td>
+				<td>&nbsp;</td>
+			</tr>	
+		<% count = 1 %>
+		<% for item in item_list_personal %>	
+			<tr class="listbody">
+				<td class="listbody">
+					<%= count %>
+				</td>
+				<td class="listbody">			
+					<% if(type == "Music") %>
+						<a href="http://www.amazon.com/gp/redirect.html?link_code=ur2&tag=outbrandingco-20&camp=1789&creative=9325&location=/gp/search%3F%26index=music%26keywords=<%= h(item.item_name) -%>%26_encoding=UTF8">
+					<% elsif(type == "Movies") %>
+						<a href="http://www.amazon.com/gp/redirect.html?link_code=ur2&tag=outbrandingco-20&camp=1789&creative=9325&location=/gp/search%3F%26index=dvd%26keywords=<%= h(item.item_name) -%>%26_encoding=UTF8">				
+					<% elsif(type == "Books") %>
+						<a href="http://www.amazon.com/gp/redirect.html?link_code=ur2&tag=outbrandingco-20&camp=1789&creative=9325&location=/gp/search%3F%26index=books%26keywords=<%= h(item.item_name) -%>%26_encoding=UTF8">
+					<% end %>
+						<%= h(item.item_name[0...20]) -%>
+						<% if(item.item_name.length > 20) -%>...<% end -%>
+					</a>		
+				</td>
+				<td class="listbody">
+					<%= item.item_count %>
+				</td>
+				<td class="listbody">			
+					<% 	if(type == "Music") 
+							action_type = "who_music"
+						elsif(type == "Movies") 
+							action_type = "who_movies"
+						elsif(type == "Books")
+							action_type = "who_books"
+					 end %>				
+					<%= link_to("Who likes this?", :action => action_type, :name => h(item.item_name), :user_id => user_id) %>
+				</td>		
+			</tr>		
+		<% count+= 1 %>
+		<% end %> 
+		</table>

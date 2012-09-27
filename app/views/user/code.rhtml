@@ -1,0 +1,28 @@
+<p>
+<% if(@statuses && @statuses.size > 0) %>
+	<b>Status:</b><br>
+	<% stats = @statuses.reverse -%>
+	<% for status in stats -%>
+		<%= status -%><br>
+	<% end -%>
+<% end -%>
+</p>
+
+<% if @saved_user_id && @image_location %>
+<p>
+	<b>Cut and paste the html below into your MySpace page:</b>
+<textarea cols=60 rows=7>
+<div id="wmfl" style="border:2px solid black;width:300px;">
+<center><a href="http://www.whatmyfriendslike.com/app/user/items/<%=@saved_user_id%>">
+<img src="http://www.whatmyfriendslike.com/<%= @image_location %>" border="0"><br>
+See what my friends like!</a></center></div>
+</textarea>
+<p>
+<p>
+	<b>Your most popular items:</b>
+	<a href="http://www.whatmyfriendslike.com/app/user/items/<%=@saved_user_id%>">
+		http://www.whatmyfriendslike.com/app/user/items/<%=@saved_user_id%>
+	</a>
+</p>
+<% end %>
+

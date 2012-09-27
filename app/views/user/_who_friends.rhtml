@@ -1,0 +1,33 @@
+		<table class="listtable" width="350">
+			<tr class="listtitle">
+				<td colspan="2">
+					&nbsp;Friends who like 
+					<% if(type == "Music") %>
+						<a href="http://www.amazon.com/gp/redirect.html?link_code=ur2&tag=outbrandingco-20&camp=1789&creative=9325&location=/gp/search%3F%26index=music%26keywords=<%= h(item_name) -%>%26_encoding=UTF8">
+					<% elsif(type == "Movies") %>
+						<a href="http://www.amazon.com/gp/redirect.html?link_code=ur2&tag=outbrandingco-20&camp=1789&creative=9325&location=/gp/search%3F%26index=dvd%26keywords=<%= h(item_name) -%>%26_encoding=UTF8">				
+					<% elsif(type == "Books") %>
+						<a href="http://www.amazon.com/gp/redirect.html?link_code=ur2&tag=outbrandingco-20&camp=1789&creative=9325&location=/gp/search%3F%26index=books%26keywords=<%= h(item_name) -%>%26_encoding=UTF8">
+					<% end %>
+					<%= h(item_name) %>
+					</a>
+				</td>
+			</tr>
+			<tr class="listheader">
+				<td>Name</td>
+				<td>&nbsp;</td>
+			</tr>	
+		<% for friend in who_friends %>	
+			<tr class="listbody">
+				<td class="listbody">			
+					<a href="http://profile.myspace.com/index.cfm?fuseaction=user.viewprofile&friendid=<%= friend.myspace_id -%>">
+						<%= h(friend.username[0...35]) -%>
+						<% if(friend.username.length > 35) -%>...<% end -%>
+					</a>
+				</td>
+				<td class="listbody">
+					<%= link_to("I also like", :action=> "also_like", :id=> friend.id, :user_id => @user_id) %>
+				</td>		
+			</tr>		
+		<% end %> 
+		</table>

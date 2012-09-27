@@ -1,0 +1,13 @@
+<p>
+	<% if(@user_id) %>
+		<%= link_to("Back to most popular items", :action => "items", :id => @user_id) %>
+	<% end %>
+</p>
+		<p align="center">
+			<%= render(:partial => "who_friends", 
+					:object => @friends,
+					:locals => { :item_name => @item_name, 
+						:type => "Movies",
+						:user_id => @user_id }) %>
+		</p>	
+		
